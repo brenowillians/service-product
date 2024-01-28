@@ -1,0 +1,39 @@
+###
+POST  http://localhost:7100/size/ HTTP/1.1
+content-type: application/json
+
+{
+    "name":"G",
+    "createdId": 8  
+    
+}
+
+###
+GET  http://localhost:7100/size/ HTTP/1.1
+
+###
+GET  http://localhost:7100/size/2 HTTP/1.1
+
+###
+PATCH  http://localhost:7100/size/2 HTTP/1.1
+content-type: application/json
+
+{
+    "salePrice": 400
+    
+}
+
+###
+DELETE  http://localhost:7100/size/2 HTTP/1.1
+
+
+###
+POST  http://localhost:7100/size/list HTTP/1.1
+content-type: application/json
+
+{
+    "name": "",
+    "items": 10,
+    "page": 1,
+    "order": { "name": "ASC", "createdDate": "DESC"}
+}

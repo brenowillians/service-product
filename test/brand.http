@@ -1,0 +1,39 @@
+###
+POST  http://localhost:7100/brand/ HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Adidas",
+    "createdId": 8
+}
+
+
+###
+GET  http://localhost:7100/brand/ HTTP/1.1
+
+###
+GET  http://localhost:7100/brand/2 HTTP/1.1
+
+###
+PATCH  http://localhost:7100/brand/2 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Nike"
+    
+}
+
+###
+DELETE  http://localhost:7100/brand/2 HTTP/1.1
+
+
+###
+POST  http://localhost:7100/brand/list HTTP/1.1
+content-type: application/json
+
+{
+    "name": "did",
+    "items": 10,
+    "page": 1,
+    "order": { "name": "ASC", "createdDate": "DESC"}
+}

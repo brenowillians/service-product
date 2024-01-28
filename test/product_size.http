@@ -1,0 +1,41 @@
+###
+POST  http://localhost:7100/product-size/ HTTP/1.1
+content-type: application/json
+
+{
+    "idProduct": 4,
+    "idSize": 999,
+    "createdId": 8
+}
+
+
+###
+GET  http://localhost:7100/product-size/ HTTP/1.1
+
+###
+GET  http://localhost:7100/product-size/2 HTTP/1.1
+
+###
+PATCH  http://localhost:7100/product-size/2 HTTP/1.1
+content-type: application/json
+
+{
+    "active": true
+    
+}
+
+###
+DELETE  http://localhost:7100/product-size/2 HTTP/1.1
+
+
+###
+POST  http://localhost:7100/product-size/list HTTP/1.1
+content-type: application/json
+
+{
+    
+    "items": 10,
+    "page": 1,
+    "order": { }
+    
+}
