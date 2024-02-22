@@ -17,17 +17,21 @@ import { ProductSizeController } from './controllers/product_size.controller';
 import { ProductController } from './controllers/product.controller';
 import { SizeController } from './controllers/size.controller';
 import { Product } from './entities/product';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    
+    ConfigModule.forRoot({
+      expandVariables: true,
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      database: 'loja-products',
-      username: 'postgres',
-      password: '123456',
+      host: process.env.DB_HOST,
+      port: Number(process.env.DB_PORT),
+      database: process.env.DB_NAME,
+      username: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       autoLoadEntities: true,
       logging: true,
