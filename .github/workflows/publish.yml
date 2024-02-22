@@ -20,6 +20,6 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
            docker build -f Dockerfile . --tag ghcr.io/brenowillians/service-product-producao:1.$GITHUB_RUN_NUMBER
-           docker tag ghcr.io/brenowillians/service-product-producao:1.$GITHUB_RUN_NUMBER ghcr.io/brenowillians/microservice-cliente-producao:latest
+           docker tag ghcr.io/brenowillians/service-product-producao:1.$GITHUB_RUN_NUMBER ghcr.io/brenowillians/service-product-producao:latest
            docker push ghcr.io/brenowillians/service-product-producao:1.$GITHUB_RUN_NUMBER
            docker push ghcr.io/brenowillians/service-product-producao:latest
