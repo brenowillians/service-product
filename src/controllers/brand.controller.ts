@@ -16,6 +16,15 @@ export class BrandController {
     return "ESSA PORRA TÁ ALTERADA"
   }
   
+
+  @ApiCreatedResponse({
+    type: Brand, // aqui definimos o tipo de resposta
+  }) 
+  @Post('list')
+  list(@Body() listCriteriaBrandDto: ListCriteriaBrandDto) {
+    return this.brand.list(listCriteriaBrandDto);
+  }
+
   @ApiCreatedResponse({
     type: Brand, // aqui definimos o tipo de resposta
   }) 
@@ -57,12 +66,6 @@ export class BrandController {
     return this.brand.remove(+id);
   }
 
-  @ApiCreatedResponse({
-    type: Brand, // aqui definimos o tipo de resposta
-  }) 
-  @Post('list')
-  list(@Body() listCriteriaBrandDto: ListCriteriaBrandDto) {
-    return this.brand.list(listCriteriaBrandDto);
-  }
+
 
 }
