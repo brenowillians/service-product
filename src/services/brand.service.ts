@@ -98,4 +98,16 @@ export class BrandService {
         
       }
 
+      findAllActive() {
+        return this.brandRepo.find(
+          {
+            where:{
+              active:true
+            },
+            order:{
+              name: "ASC"
+            }
+          }
+        )
+      }
 }

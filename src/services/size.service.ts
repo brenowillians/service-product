@@ -100,6 +100,17 @@ export class SizeService {
         
       }
 
-      
+      findAllActive() {
+        return this.sizeRepo.find(
+          {
+            where:{
+              active:true
+            },
+            order:{
+              name: "ASC"
+            }
+          }
+        )
+      }
 
 }

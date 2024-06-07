@@ -12,6 +12,9 @@ content-type: application/json
 GET  http://localhost:7100/size/ HTTP/1.1
 
 ###
+GET  http://localhost:7100/size/active HTTP/1.1
+
+###
 GET  http://localhost:7100/size/2 HTTP/1.1
 
 ###

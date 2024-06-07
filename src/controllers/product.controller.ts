@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
 import { CreateProductDto } from 'src/dto/create-product.dto';
+import { ListCriteriaProductByCategoryDto } from 'src/dto/list-criteria-product-by-category.dto';
 import { ListCriteriaProductDto } from 'src/dto/list-criteria-product.dto';
 import { UpdateProductDto } from 'src/dto/update-product.dto';
 import { Product } from 'src/entities/product';
@@ -37,6 +38,15 @@ export class ProductController {
   @ApiCreatedResponse({
     type: Product, // aqui definimos o tipo de resposta
   }) 
+  
+  @Get('active')
+  findAllActive() {
+    return this.product.findAllActive();
+  }
+
+  @ApiCreatedResponse({
+    type: Product, // aqui definimos o tipo de resposta
+  }) 
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.product.findOne(+id);
@@ -64,6 +74,11 @@ export class ProductController {
   @Post('list')
   list(@Body() listCriteriaproductDto: ListCriteriaProductDto) {
     return this.product.list(listCriteriaproductDto);
+  }
+
+  @Post('list-by-category')
+  listByCategory(@Body() listCriteriaProductByCategoryDto: ListCriteriaProductByCategoryDto) {
+    return this.product.listByCategory(listCriteriaProductByCategoryDto);
   }
 
 }

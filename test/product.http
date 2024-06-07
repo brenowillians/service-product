@@ -16,6 +16,9 @@ content-type: application/json
 ###
 GET  http://localhost:7100/product/ HTTP/1.1
 
+###
+GET  http://localhost:7100/product/active HTTP/1.1
+
 
 ###
 GET  http://localhost:7100/product/2 HTTP/1.1
@@ -39,6 +42,19 @@ content-type: application/json
 
 {
     "name": "",
+    "items": 10,
+    "page": 1,
+    "order": { "fullPrice": "ASC"}
+    
+}
+
+###
+POST  http://localhost:7100/product/list-by-category HTTP/1.1
+content-type: application/json
+
+{
+    "idCategory": 12,
+    "idSize": 2,
     "items": 10,
     "page": 1,
     "order": { "fullPrice": "ASC"}

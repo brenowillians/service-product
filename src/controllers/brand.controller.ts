@@ -45,6 +45,15 @@ export class BrandController {
   @ApiCreatedResponse({
     type: Brand, // aqui definimos o tipo de resposta
   }) 
+  
+  @Get('active')
+  findAllActive() {
+    return this.brand.findAllActive();
+  }
+
+  @ApiCreatedResponse({
+    type: Brand, // aqui definimos o tipo de resposta
+  }) 
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.brand.findOne(+id);

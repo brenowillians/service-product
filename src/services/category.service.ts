@@ -99,5 +99,18 @@ export class CategoryService {
         
       }
 
+      findAllActive() {
+        return this.categoryRepo.find(
+          {
+            where:{
+              active:true
+            },
+            order:{
+              name: "ASC"
+            }
+          }
+        )
+      }
+
 
 }

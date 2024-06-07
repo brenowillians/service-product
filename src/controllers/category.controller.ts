@@ -36,6 +36,15 @@ export class CategoryController {
   @ApiCreatedResponse({
     type: Category, // aqui definimos o tipo de resposta
   }) 
+  
+  @Get('active')
+  findAllActive() {
+    return this.category.findAllActive();
+  }
+
+  @ApiCreatedResponse({
+    type: Category, // aqui definimos o tipo de resposta
+  }) 
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.category.findOne(+id);

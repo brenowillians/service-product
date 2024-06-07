@@ -37,6 +37,15 @@ export class SizeController {
   @ApiCreatedResponse({
     type: Size, // aqui definimos o tipo de resposta
   }) 
+  
+  @Get('active')
+  findAllActive() {
+    return this.size.findAllActive();
+  }
+
+  @ApiCreatedResponse({
+    type: Size, // aqui definimos o tipo de resposta
+  }) 
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.size.findOne(+id);
