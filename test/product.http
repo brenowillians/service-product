@@ -19,9 +19,8 @@ GET  http://localhost:7100/product/ HTTP/1.1
 ###
 GET  http://localhost:7100/product/active HTTP/1.1
 
-
 ###
-GET  http://localhost:7100/product/2 HTTP/1.1
+GET  http://localhost:7100/product/14 HTTP/1.1
 
 ###
 PATCH  http://localhost:7100/product/2 HTTP/1.1

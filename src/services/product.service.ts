@@ -26,7 +26,12 @@ export class ProductService {
       }
     
       findOne(id: number) {
-        return this.productRepo.findOne({where: {idProduct: id}})
+        return this.productRepo.findOne(
+          {
+            relations: ['productSizes', 'productSizes.idSize2'],
+            where: {idProduct: id}
+          }
+        )
       }
     
       update(id: number, updateProductDto: UpdateProductDto) {
